@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Routes
-app.post('/send-email', (req, res) => {
+app.post('/send-email', cors(), (req, res) => {
     const { name, email, subject, phone, message } = req.body;
 
     const mailOptions = {
